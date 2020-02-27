@@ -2,6 +2,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+<div class="users-block">
+    <ul>
+        @if (Model != null) {
+            @foreach (var user in Model) {
+                <li>
+                    @user.EatingDate 
+                    @user.UserName.Substring(0, user.UserName.IndexOf('@'))
+                    ел спаржу уже @user.Counter раз
+                </li>
+            }
+        }
+    </ul>
 </div>

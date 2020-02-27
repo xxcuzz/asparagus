@@ -1,13 +1,19 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace asparagus.Models {
-    public class ApplicationUser {
-        //[Key]
+    /*public class ApplicationUser {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
 
-        public static int m_Counter = 0;
+        
+    }*/
+    public class ApplicationUser : IdentityUser {
+        [Display(Name = "Release Date")]
+        [DataType(DataType.Date)]
+        public DateTime EatingDate { get; set; }
+        public int Counter { get; set; }
     }
 }

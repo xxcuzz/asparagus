@@ -7,9 +7,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace asparagus.Data {
     public class ApplicationDbContext : IdentityDbContext {
-        public DbSet<ApplicationUser> Users { get; set; }
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) {
+            //Database.EnsureDeleted();
             Database.EnsureCreated();
 
         }
