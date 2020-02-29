@@ -13,12 +13,14 @@ namespace asparagus.Controllers {
     public class HomeController : Controller {
 
         private ApplicationDbContext _application;
+        UserManager<ApplicationUser> _userManager;
 
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext application) {
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext application, UserManager<ApplicationUser> userManager) {
             _logger = logger;
             _application = application;
+            _userManager = userManager;
         }
 
         public IActionResult Index() {
@@ -33,9 +35,19 @@ namespace asparagus.Controllers {
             return View(_application.Users);
         }
 
-        public void UserAte() {
-            
+        public IActionResult UserAte() {
+            var userId = _userManager.GetUserId(User);
+
+            ApplicationUser user = _application.Users.First(x => x.Id == userId);
+            user.Counter++;
+            user.EatingDate = DateTime.Now;
+
+            _application.SaveChanges();
+
+            return RedirectToAction("Feed");
         }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error() {
