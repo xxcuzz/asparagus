@@ -1,13 +1,27 @@
 ﻿<div class="users-block">
     <ul>
         @if (Model != null) {
-            @foreach (var user in Model) {
+            @foreach (var note in Model) {
                 <li>
-                    @user.EatingDate
-                    @user.UserName.Substring(0, user.UserName.IndexOf('@'))
-                    ел спаржу уже @user.Counter раз
+                    @note.EatingDate
+                    @note.Name
+                    ел спаржу уже @note.Counter раз
                 </li>
             }
         }
     </ul>
 </div>
+
+@*<div class="users-block">
+        <ul>
+            @if (Model != null) {
+                @foreach (var user in Model) {
+                    <li>
+                        @user.EatingDate
+                        @user.UserName.Substring(0, user.UserName.IndexOf('@'))
+                        ел спаржу уже @user.Counter раз
+                    </li>
+                }
+            }
+        </ul>
+    </div>*@

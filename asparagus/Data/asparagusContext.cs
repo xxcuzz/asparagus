@@ -14,6 +14,6 @@ namespace asparagus.Data
         {
         }
 
-        public DbSet<asparagus.Models.EatingsList> EatingsList { get; set; }
+        public DbSet<EatingsList> EatingsList { get; set; }
     }
 }
