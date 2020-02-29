@@ -4,16 +4,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace asparagus.Models {
     public class ApplicationUser : IdentityUser {
-        [Display(Name = "Release Date")]
+        [Display(Name = "Eating Date")]
         [DataType(DataType.Date)]
-        public DateTime EatingDate { 
-            get { 
-                return DateTime.Now;
-            } 
-            set {
-                _ = DateTime.Now;
-            }
-        }
+        public DateTime EatingDate { get; set; }
         public int Counter { get; set; }
     }
 }
