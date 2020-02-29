@@ -27,10 +27,15 @@ namespace asparagus {
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<EatingListDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("EatingListDbContext")));
             services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddDbContext<asparagusContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("asparagusContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
