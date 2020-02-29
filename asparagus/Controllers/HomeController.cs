@@ -19,9 +19,9 @@ namespace asparagus.Controllers {
 
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, 
-            ApplicationDbContext application, 
-            UserManager<ApplicationUser> userManager, 
+        public HomeController(ILogger<HomeController> logger,
+            ApplicationDbContext application,
+            UserManager<ApplicationUser> userManager,
             EatingListDbContext eating) {
             _logger = logger;
             _application = application;
@@ -38,17 +38,33 @@ namespace asparagus.Controllers {
         }
 
         public async Task<IActionResult> Users() {
-            return View(await _application.Users.ToListAsync());
+
+            var userList = await _application.Users.ToListAsync();
+            if (userList == null || userList.Count == 0) {
+                return RedirectToAction("EmptyDatabase");
+            }
+            return View(userList);
+
         }
 
         public IActionResult Feed() {
-            var notes = _eating.EatingNote.OrderByDescending(s => s.EatingDate);
+            var notes = _eating.EatingNote.ToList();
 
-            return View(notes);
+            if (notes == null || notes.Count == 0) {
+                return RedirectToAction("EmptyDatabase");
+            }
+            var notes1 = _eating.EatingNote.OrderByDescending(s => s.EatingDate);
+            return View(notes1);
+
         }
-
+        public IActionResult EmptyDatabase() {
+            return View();
+        }
         public IActionResult UserAte() {
             var userId = _userManager.GetUserId(User);
+            if (userId == null) {
+                return RedirectToAction("Error");
+            }
 
             ApplicationUser user = _application.Users.First(x => x.Id == userId);
             user.Counter++;
