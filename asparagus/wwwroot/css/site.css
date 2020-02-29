@@ -5,6 +5,7 @@ a.navbar-brand {
     white-space: normal;
     text-align: center;
     word-break: break-all;
+    
 }
 
 /* Provide sufficient contrast against white background */
@@ -22,6 +23,7 @@ a {
     color: #fff;
     background-color: #1b6ec2;
     border-color: #1861ac;
+    
 }
 
 /* Sticky footer styles
@@ -51,10 +53,21 @@ html {
     min-height: 100%;
 }
 
-
 body {
-    margin: 0;
+    margin: auto;
     padding: 0;
+    background: url('/css/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.pb-3 {
+    height: 85vh;
+    
+}
+
+#eatid{
+    margin-left:45%;
 }
 
 .users-block {
@@ -69,6 +82,8 @@ body {
         border-bottom-style: none;
         padding-left: 20px;
         line-height: 45px;
+        background-color: white;
+        
     }
 
         .users-block li:first-child {
@@ -82,3 +97,17 @@ body {
             border-bottom-style: solid;
         }
 
+
+
+#welcome {
+    color:black;
+    text-align:center;
+    background-color: white;
+    opacity:0.9;
+}
+
+#aspTitle {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+}
