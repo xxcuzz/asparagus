@@ -26,12 +26,6 @@ namespace asparagus.Controllers {
             return View();
         }
 
-       /* public IActionResult Feed() {
-            var notes = _context.EatingsList.OrderByDescending(s => s.EatingDate);
-
-            return View(notes);
-        }*/
-
         // POST: EatingsLists/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
