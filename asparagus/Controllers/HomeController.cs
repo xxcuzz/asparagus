@@ -25,12 +25,16 @@ namespace asparagus.Controllers {
             return View();
         }
 
-        public IActionResult Eat(ApplicationUser user) {
-            return View(user);
+        public IActionResult Eat() {
+            return View();
         }
 
         public IActionResult Feed() {
             return View(_application.Users);
+        }
+
+        public void UserAte() {
+            
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
