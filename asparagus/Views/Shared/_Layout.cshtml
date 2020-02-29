@@ -15,6 +15,8 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
+                <a id="aspTitle" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ASPARAGUS</a>
+
                 <a class="nav-link text-dark" asp-controller="Home" asp-action="Feed">Feed</a>
                 <a class="nav-link text-dark" asp-controller="Home" asp-action="Users">Users</a>
                 @if (SignInManager.IsSignedIn(User)) {
@@ -22,8 +24,6 @@
                         <button type="submit" class="nav-link btn btn-link text-dark">Eat</button>
                     </form>
                 }
-
-                <a id="aspTitle" class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ASPARAGUS</a>
 
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />

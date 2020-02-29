@@ -43,8 +43,8 @@ namespace asparagus.Controllers {
             if (userList == null || userList.Count == 0) {
                 return RedirectToAction("EmptyDatabase");
             }
+            userList = userList.OrderByDescending(s => s.Counter).ToList();
             return View(userList);
-
         }
 
         public IActionResult Feed() {

@@ -21,7 +21,7 @@ a {
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
-    border-color: #1861ac; 
+    border-color: #1861ac;
 }
 
 /* Sticky footer styles
@@ -59,18 +59,19 @@ body {
     background-repeat: no-repeat;
 }
 
-#eatid{
-    margin-left:45%;
+#eatid {
+    margin-left: 45%;
 }
 
 .users-block {
     margin: 0;
-    padding: 0;    
+    padding: 0;
 }
-.users-block ul{
-    padding:0;
-    margin:0;
-}
+
+    .users-block ul {
+        padding: 0;
+        margin: 0;
+    }
 
     .users-block li {
         height: 50px;
@@ -82,11 +83,23 @@ body {
         padding-left: 20px;
     }
 
+#user-ul > :first-child {
+    background-color: gold;
+}
+
+#user-ul > :nth-child(2) {
+    background-color: silver;
+}
+
+#user-ul > :nth-child(3) {
+    background-color: goldenrod;
+}
+
 #welcome {
-    color:black;
-    text-align:center;
+    color: black;
+    text-align: center;
     background-color: white;
-    opacity:0.9;
+    opacity: 0.9;
 }
 
 .pb-3 {
@@ -94,8 +107,4 @@ body {
     opacity: 0.9;
     border: 1px #dddddd solid;
     border-radius: 5px;
-}
-
-#aspTitle{
-    margin-left: 33%;
 }
