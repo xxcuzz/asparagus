@@ -32,7 +32,9 @@ namespace asparagus.Controllers {
         }
 
         public IActionResult Feed() {
-            return View(_application.Users);
+            var users = _application.Users.OrderByDescending(s => s.EatingDate);
+
+            return View(users);
         }
 
         public IActionResult UserAte() {
