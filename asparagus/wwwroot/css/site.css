@@ -5,7 +5,6 @@ a.navbar-brand {
     white-space: normal;
     text-align: center;
     word-break: break-all;
-    
 }
 
 /* Provide sufficient contrast against white background */
@@ -22,8 +21,7 @@ a {
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
     color: #fff;
     background-color: #1b6ec2;
-    border-color: #1861ac;
-    
+    border-color: #1861ac; 
 }
 
 /* Sticky footer styles
@@ -61,18 +59,17 @@ body {
     background-repeat: no-repeat;
 }
 
-.pb-3 {
-    height: 85vh;
-    
-}
-
 #eatid{
     margin-left:45%;
 }
 
 .users-block {
-    margin: auto;
-    margin-bottom: 200px;
+    margin: 0;
+    padding: 0;    
+}
+.users-block ul{
+    padding:0;
+    margin:0;
 }
 
     .users-block li {
@@ -80,24 +77,10 @@ body {
         list-style-type: none;
         border: 1px #dddddd solid;
         border-bottom-style: none;
-        padding-left: 20px;
         line-height: 45px;
         background-color: white;
-        
+        padding-left: 20px;
     }
-
-        .users-block li:first-child {
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-        }
-
-        .users-block li:last-child {
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-            border-bottom-style: solid;
-        }
-
-
 
 #welcome {
     color:black;
@@ -106,8 +89,13 @@ body {
     opacity:0.9;
 }
 
-#aspTitle {
-    flex-direction: row;
-    display: flex;
-    flex-wrap: wrap;
+.pb-3 {
+    background-color: white;
+    opacity: 0.9;
+    border: 1px #dddddd solid;
+    border-radius: 5px;
+}
+
+#aspTitle{
+    margin-left: 33%;
 }
