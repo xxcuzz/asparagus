@@ -34,8 +34,7 @@ namespace asparagus {
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddDbContext<asparagusContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("asparagusContext")));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

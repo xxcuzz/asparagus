@@ -19,7 +19,10 @@ namespace asparagus.Controllers {
 
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext application, UserManager<ApplicationUser> userManager,EatingListDbContext eating) {
+        public HomeController(ILogger<HomeController> logger, 
+            ApplicationDbContext application, 
+            UserManager<ApplicationUser> userManager, 
+            EatingListDbContext eating) {
             _logger = logger;
             _application = application;
             _userManager = userManager;
