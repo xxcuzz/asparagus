@@ -22,12 +22,15 @@ namespace asparagus.Controllers {
         }
 
         public IActionResult Index() {
-            return View(_application.Users);
+            return View();
         }
 
-        // GET: Movies/Edit/5
         public IActionResult Eat(ApplicationUser user) {
             return View(user);
+        }
+
+        public IActionResult Feed() {
+            return View(_application.Users);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

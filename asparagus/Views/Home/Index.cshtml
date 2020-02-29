@@ -2,16 +2,6 @@
     ViewData["Title"] = "Feed ";
 }
 
-<div class="users-block">
-    <ul>
-        @if (Model != null) {
-            @foreach (var user in Model) {
-                <li>
-                    @user.EatingDate 
-                    @user.UserName.Substring(0, user.UserName.IndexOf('@'))
-                    ел спаржу уже @user.Counter раз
-                </li>
-            }
-        }
-    </ul>
-</div>
+<h1>Welcome!</h1>
+<a href="/Home/Feed">Feed</a>
+<a href="/Home/Eat">Eat</a>
