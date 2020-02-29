@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using asparagus.Models;
 using asparagus.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace asparagus.Controllers {
     public class HomeController : Controller {
@@ -33,6 +34,10 @@ namespace asparagus.Controllers {
             return View();
         }
 
+        public async Task<IActionResult> Users() {
+            return View(await _application.Users.ToListAsync());
+        }
+
         public IActionResult Feed() {
             var notes = _eating.EatingNote.OrderByDescending(s => s.EatingDate);
 
@@ -50,8 +55,8 @@ namespace asparagus.Controllers {
             EatingsList eatingNote = new EatingsList {
                 Counter = user.Counter,
                 EatingDate = DateTime.Now,
-                Name = user.UserName
-                
+                Name = user.UserName.Substring(0, user.UserName.IndexOf('@'))
+
             };
             _eating.Update(eatingNote);
             _eating.SaveChanges();
